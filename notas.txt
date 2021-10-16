@@ -1,0 +1,70 @@
+Crear repositorio en git: yl uego
+    -terminal: git init 
+               git config --global user.name "nombre"
+               git config --global user.email "email"
+               (crear un archivo, git add ., git commit)
+               git remote add "link"
+               git push -u main
+
+Instalar node (y npm):
+    npm install lite-server
+        +++en el package.json agregar en scrips:
+            "scripts": {
+                "start": "npm run lite",
+                "test": "echo \"Error: no test specified\" && exit 1",
+                "lite": "lite-server"
+            }
+        ahora el servidor se inicia con: npm start
+
+        +++crear un archivo llamado ".gitignore":
+            agregar esto dentro del archivo "node_modules"
+
+Instalar BOOSTRAP (y jquery,popper)
+    npm install bootstrap@4.0.0 --save
+    npm install jquery@3.3.1 popper.js@1.12.9 --save
+
+    insertar en el index.html
+         <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+
+        <!-- jQuery first, then Popper.js, then Bootstrap JS. -->
+        <script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
+        <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
+        <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+
+Instalar Font Awesome (iconos)
+    npm install font-awesome --save
+    <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.css">
+
+Instalar Bootstrap Social (iconos redes sociales)
+    npm install bootstrap-social --save
+    <link rel="stylesheet" href="node_modules/bootstrap-social/bootstrap-social.css">
+
+
+Aprender jquery:   https://www.w3schools.com/jquery/default.asp
+
+Instalar less: 
+    less sudo npm install -g less
+    Para copilar mi archivo .less tenemos que estar en la capeta del archivo y ejecutar:
+            lessc styles.less styles.css
+
+Instaler SASS:
+    npm install --save-dev node-sass
+
+--------------------------------------------------------
+
+YARN se puede usar en vez de NPM: es un instalador de paquete y puedo utilizar o yaarn o npm :
+    intrucciones de descarga https://yarnpkg.com/
+    npm install yarn
+
+Instalar React: 
+    sudo npm install -g create-react-app
+
+Agregar bootstrap a nuestro proyecto react:
+    npm install bootstrap
+    yarn add bootstrap --save
+
+    yarn add reactstrap react-popper.js
+    npm install reactstrap react-popper.js --save
+
+    Ahora en index.js agregamos antes de importar nuestra hoja de stilos:
+        import 'bootstrap/dist/css/bootstrap.css';
