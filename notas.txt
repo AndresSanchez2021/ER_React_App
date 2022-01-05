@@ -53,11 +53,14 @@ Instaler SASS:
 --------------------------------------------------------
 
 YARN se puede usar en vez de NPM: es un instalador de paquete y puedo utilizar o yaarn o npm :
-    intrucciones de descarga https://yarnpkg.com/
-    npm install yarn
+    intrucciones de descarga https://yarnpkg.com/      ->Getting started ->download
+    npm install yarn            ->forma mas facil y con npm
 
 Instalar React: 
     sudo npm install -g create-react-app
+
+Crear un nuevo proyecto react con create-react-app
+    create-react-app "NameAplication" 
 
 Agregar bootstrap a nuestro proyecto react:
     npm install bootstrap
@@ -68,3 +71,16 @@ Agregar bootstrap a nuestro proyecto react:
 
     Ahora en index.js agregamos antes de importar nuestra hoja de stilos:
         import 'bootstrap/dist/css/bootstrap.css';
+
+
+
+Instalar Visual studio code
+    Extensiones:
+                quokka.js
+                bracjet  piar colorizer 2
+                ESlint
+                prettier code
+                bedugger for chrome
+                better comments
+                Visual studio intelliCode
+                live Server
