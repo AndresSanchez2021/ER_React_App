@@ -63,8 +63,8 @@ Crear un nuevo proyecto react con create-react-app
     create-react-app "NameAplication" 
 
 Agregar bootstrap a nuestro proyecto react:
-    npm install bootstrap
-    yarn add bootstrap --save
+    npm install bootstrap --save
+    yarn add bootstrap 
 
     yarn add reactstrap react-popper.js
     npm install reactstrap react-popper.js --save
