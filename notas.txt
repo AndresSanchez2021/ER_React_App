@@ -69,6 +69,10 @@ Agregar bootstrap a nuestro proyecto react:
     yarn add reactstrap react-popper.js
     npm install reactstrap react-popper.js --save
 
+    yarn add font-awesome
+
+    yarn add bootstarp-social
+
     Ahora en index.js agregamos antes de importar nuestra hoja de stilos:
         import 'bootstrap/dist/css/bootstrap.css';
 
