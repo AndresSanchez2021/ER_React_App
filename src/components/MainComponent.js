@@ -37,7 +37,6 @@ class Main extends Component{
         />
       );
     }
-
     const DishWithId= ({match})=>{
       return(
         <DishDetail
