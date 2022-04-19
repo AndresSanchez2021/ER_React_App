@@ -11,7 +11,7 @@ class Contact extends Component{
             lastname:'',
             telnum:'',
             email:'',
-            agree:'',
+            agree:false,
             contactType:'Tel.',
             message:''
         }
@@ -109,7 +109,7 @@ class Contact extends Component{
                                 <Col md={{size:6, offset:2}}>
                                     <FormGroup check>
                                         <Label check>
-                                            <Input type="checkbox" name="agree" checked="this.state.agree" onChange={this.handleInputChange}/>
+                                            <Input type="checkbox" name="agree" checked={this.state.agree} onChange={this.handleInputChange}/>
                                             <strong>May we contact you</strong>
                                         </Label>
                                     </FormGroup>

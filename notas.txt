@@ -62,6 +62,9 @@ Instalar React:
 Crear un nuevo proyecto react con create-react-app
     create-react-app "NameAplication" 
 
+(yarn) Crear un nuevo proyecto react
+    yarn create react-app "nombre"
+
 Agregar bootstrap y otras dependencias a nuestro proyecto react:
     npm install bootstrap --save
     yarn add bootstrap 
@@ -77,6 +80,14 @@ Agregar bootstrap y otras dependencias a nuestro proyecto react:
 
     Ahora en index.js agregamos antes de importar nuestra hoja de stilos:
         import 'bootstrap/dist/css/bootstrap.css';
+
+
+        yarn add bootstrap
+        yarn add reactstrap react-popper.js
+        yarn add font-awesome
+        yarn add bootstarp-social
+        yarn add react-router-dom
+
 
 
 
