@@ -93,6 +93,8 @@ Para darle un update a react vamos a usar REDUX (es precticamente una arquitectu
     yarn add redux@3.7.2
     yarn add react-redux@5.0.7
 
+Para darle un update a los formularios usamos...
+    yarn add react-redux-form@1.16.8
 
 Instalar Visual studio code
     Extensiones:
