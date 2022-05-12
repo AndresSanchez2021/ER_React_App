@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {Breadcrumb, BreadcrumbItem, FormFeedback} from 'reactstrap';
 import {Button, Form,FormGroup,Label, Input, Col, Row } from 'reactstrap'; //para los forms
-import {Control, LocalForm, Errors} from 'react-redux-form';
+import {Control, LocalForm, Errors} from 'react-redux-form'; //use to take control over forms
 import {Link} from 'react-router-dom';
 
 
@@ -119,8 +119,11 @@ class Contact extends Component{
                             <Row className="form-group">
                                 <Label htmlFor="telnum" md={2}>Telephone Number</Label>
                                 <Col  md={10}>
-                                    <Control.text model=".telnum" id="telnum" name="telnum" 
-                                    placeholder="Telephone Number" 
+                                    <Control.text 
+                                        model=".telnum" 
+                                        id="telnum" 
+                                        name="telnum" 
+                                        placeholder="Telephone Number" 
                                         className="form-control"
                                         validators ={{required, minLength:minLength(3),maxLength:maxLength(15), isNumber}} 
                                     /> 
@@ -169,7 +172,7 @@ class Contact extends Component{
                                     </div>
                                 </Col>
                                 <Col md={{size:3, offset:1}}>
-                                    <Control.select model="contactType" name="contactType" className="form-control">
+                                    <Control.select model=".contactType" name="contactType" className="form-control">
                                         <option>Tel.</option>
                                         <option>Email.</option>
                                     </Control.select>
