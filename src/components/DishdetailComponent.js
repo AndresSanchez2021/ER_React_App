@@ -23,7 +23,11 @@ class CommentForm extends Component {
     }
     
     toggleModal(){this.setState({isModalOpen:!this.state.isModalOpen})}
-    handleSubmit(values){console.log(JSON.stringify(values));}
+    handleSubmit(values){
+        this.toggleModal();  //usamos esto para enviar y cerar el form
+        this.props.addComment(this.props.dishId, values.rating, values.author, values.comment)
+        console.log(JSON.stringify(values));
+    }
 
     render(){
         return(
@@ -58,17 +62,17 @@ class CommentForm extends Component {
                                 </Col>
                             </Row>
                             <Row className="form-group">
-                                <Label htmlFor="name" md={12}>Your Name</Label>
+                                <Label htmlFor="author" md={12}>Your Name</Label>
                                 <Col md={12}>
                                     <Control.text className="form-control" placeholder="Name"
-                                        model=".name"
-                                        id="name"
-                                        name="name"
+                                        model=".author"
+                                        id="author"
+                                        name="author"
                                         validators={{maxLength:maxLength(15),minLength:minLength(2)}}
                                     />
                                     <Errors
                                         className="text-danger"
-                                        model = ".name"
+                                        model = ".author"
                                         show="touched"
                                         messages={
                                             {
@@ -89,6 +93,11 @@ class CommentForm extends Component {
                                         rows="6"
                                     />
                                 </Col>
+                            </Row>
+                            <Row>
+                                <Button outline >
+                                    <span className="">Submit</span>
+                                </Button>
                             </Row>
                         </LocalForm>
                     </ModalBody>
@@ -111,7 +120,7 @@ function RenderDish({dish}){
     );
 }
 
-function RenderComments({comments}){
+function RenderComments({comments, addComment, dishId}){
     console.log(comments);
     if(comments != null){
         return(
@@ -127,7 +136,7 @@ function RenderComments({comments}){
                         );
                     })}
                 </ul>
-                <CommentForm/>
+                <CommentForm dishId ={dishId} addComment ={addComment}/>
             </div>
         );
     }else return(<div></div>);
@@ -151,7 +160,11 @@ const DishDetail = (props)=>{
                 </div>
                 <div className="row">
                     <RenderDish dish={props.dish}/>
-                    <RenderComments comments={props.comments}/>
+                    <RenderComments 
+                        comments={props.comments}
+                        addComment ={props.addComment}
+                        dishId = {props.dish.id}
+                    />
                 </div>
             </div>
         );
