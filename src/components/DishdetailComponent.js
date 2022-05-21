@@ -4,6 +4,7 @@ import {Breadcrumb, BreadcrumbItem} from 'reactstrap';
 import {Button, Modal, ModalHeader, ModalBody, Label, Form,Row,Col} from 'reactstrap'; // to made a uncontrolled form
 import {Control, LocalForm, Errors} from 'react-redux-form'; //use to take control over forms
 import {Link} from 'react-router-dom';
+import {Loading} from './LoadingComponent';
 
 
 
@@ -143,9 +144,24 @@ function RenderComments({comments, addComment, dishId}){
 }
 
 const DishDetail = (props)=>{
-    console.log(props.dish);
-    console.log(props.comments);
-    if(props.dish != null)
+    if(props.isLoading){
+        return(
+            <div className="container">
+                <div className="row justify-content-center">
+                    <Loading/>
+                </div>
+            </div>
+        )
+    }else if(props.errMess){
+        return(
+            <div className="container">
+                <div className="row">
+                    <h4>{props.errMess}</h4>
+                </div>
+            </div>
+        )
+    }
+    else if(props.dish != null)
         return(
             <div className="container">
                 <div className="row">

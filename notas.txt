@@ -56,6 +56,10 @@ YARN se puede usar en vez de NPM: es un instalador de paquete y puedo utilizar o
     intrucciones de descarga https://yarnpkg.com/      ->Getting started ->download
     npm install yarn            ->forma mas facil y con npm
 
+
+---------
+| REACT |
+---------
 Instalar React: 
     sudo npm install -g create-react-app
 
@@ -65,6 +69,9 @@ Crear un nuevo proyecto react con create-react-app
 (yarn) Crear un nuevo proyecto react
     yarn create react-app "nombre"
 
+------------
+| BOOTSTRAP |
+-------------
 Agregar bootstrap y otras dependencias a nuestro proyecto react:
     npm install bootstrap --save
     yarn add bootstrap 
@@ -86,9 +93,15 @@ Agregar bootstrap y otras dependencias a nuestro proyecto react:
         yarn add reactstrap react-popper.js
         yarn add font-awesome
         yarn add bootstarp-social
+
+----------
+| ROUTER |
+----------
         yarn add react-router-dom
 
-REDUX
+ --------
+ | REDUX |
+ ---------
 Para darle un update a react vamos a usar REDUX (es precticamente una arquitectura basada en flux)
     yarn add redux@3.7.2
     yarn add react-redux@5.0.7
@@ -96,7 +109,24 @@ Para darle un update a react vamos a usar REDUX (es precticamente una arquitectu
 Para darle un update a los formularios usamos...
     yarn add react-redux-form@1.16.8
 
-Instalar Visual studio code
+
+----------------------
+| MIDLELWARE & THUNK |
+----------------------
+    yarn add redux-thunk@2.2.0
+    yarn add redux-logger@3.0.6
+
+
+
+
+
+
+
+-----------------
+| VISUAL STUDIO |
+-----------------
+
+Extensiones para Instalar Visual studio code
     Extensiones:
                 quokka.js
                 bracjet  piar colorizer 2
