@@ -136,3 +136,20 @@ Extensiones para Instalar Visual studio code
                 better comments
                 Visual studio intelliCode
                 live Server
+
+
+---------------
+| JSON-SERVER |
+---------------
+Tenemos que hacer una carpeta nueva pero fuera de nuestro proyecto, una vez alli podemos agregar los archivos json y correr lo siguiente
+    sudo npm install -g json-server
+        json-server --watch db.json -d 2000 -p 3001
+            -d == tiempo de respuesta
+            -p == puerto
+            --watch == archivos en modificacion
+
+
+---------
+| FETCH |
+---------
+    yarn add cross-fetch@2.1.0
