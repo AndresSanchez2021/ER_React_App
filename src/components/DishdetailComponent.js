@@ -6,6 +6,7 @@ import {Control, LocalForm, Errors} from 'react-redux-form'; //use to take contr
 import {Link} from 'react-router-dom';
 import {Loading} from './LoadingComponent';
 import {baseUrl} from '../shared/baseUrl';
+import {FadeTransform, Fade, Stagger} from 'react-animation-components';
 
 
 
@@ -27,7 +28,7 @@ class CommentForm extends Component {
     toggleModal(){this.setState({isModalOpen:!this.state.isModalOpen})}
     handleSubmit(values){
         this.toggleModal();  //usamos esto para enviar y cerar el form
-        this.props.addComment(this.props.dishId, values.rating, values.author, values.comment)
+        this.props.postComment(this.props.dishId, values.rating, values.author, values.comment)
         console.log(JSON.stringify(values));
     }
 
@@ -39,8 +40,8 @@ class CommentForm extends Component {
                 </Button>
 
                 
-                <Modal isOpen={this.state.isModalOpen} toogle="">
-                    <ModalHeader isOpen={this.state.isModalOpen} toogle="">
+                <Modal isOpen={this.state.isModalOpen} toggle={this.toggleModal}>
+                    <ModalHeader isOpen={this.state.isModalOpen} toggle={this.toggleModal}>
                         <div className="title">Submit Comment</div>
                     </ModalHeader>
                     <ModalBody>
@@ -111,34 +112,41 @@ class CommentForm extends Component {
 function RenderDish({dish}){
     return(
         <div className="col-12 col-md-5 m-1">
-            <Card>
-                <CardImg top src={baseUrl+dish.image}/>
-                <CardBody>
-                    <CardTitle>{dish.name}</CardTitle>
-                    <CardText>{dish.description}</CardText>
-                </CardBody>
-            </Card>
+            <FadeTransform in 
+                transformProp={{exitTransform: 'scale(0.5) translateY(-50%)'}}>
+                <Card>
+                    <CardImg top src={baseUrl+dish.image}/>
+                    <CardBody>
+                        <CardTitle>{dish.name}</CardTitle>
+                        <CardText>{dish.description}</CardText>
+                    </CardBody>
+                </Card>
+            </FadeTransform>
         </div>
     );
 }
 
-function RenderComments({comments, addComment, dishId}){
+function RenderComments({comments, postComment, dishId}){
     console.log(comments);
     if(comments != null){
         return(
             <div className="col-12 col-md-5 m-1">
                 <h4>Comments</h4>
                 <ul className="list-unstyled">
-                    {comments.map((comment)=>{
-                        return(
-                            <li key={comment.id}>
-                                <p>{comment.comment}</p>
-                                <p>-- {comment.author} </p>
-                            </li> 
-                        );
-                    })}
+                    <Stagger in>
+                        {comments.map((comment)=>{
+                            return(
+                                <Fade in>
+                                    <li key={comment.id}>
+                                        <p>{comment.comment}</p>
+                                        <p>-- {comment.author} </p>
+                                    </li> 
+                                </Fade>
+                            );
+                        })}
+                    </Stagger>
                 </ul>
-                <CommentForm dishId ={dishId} addComment ={addComment}/>
+                <CommentForm dishId ={dishId} postComment ={postComment}/>
             </div>
         );
     }else return(<div></div>);
@@ -179,7 +187,7 @@ const DishDetail = (props)=>{
                     <RenderDish dish={props.dish}/>
                     <RenderComments 
                         comments={props.comments}
-                        addComment ={props.addComment}
+                        postComment ={props.postComment}
                         dishId = {props.dish.id}
                     />
                 </div>
